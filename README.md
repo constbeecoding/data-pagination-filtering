@@ -1,2 +1,7 @@
-# data-pagination-filtering
-A data pagination and filtering project.
+# Data Pagination and Filtering
+
+
+## Features
+
+
+## Struggles
