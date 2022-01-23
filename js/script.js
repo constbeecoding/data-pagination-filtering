@@ -20,7 +20,7 @@ function showPage (list, page) {
           <li class="student-item cf">
             <div class="student-details">
               <img class="avatar" src="${data[i].picture.large}" alt="Profile Picture">
-              <h3>${data[i].name.first}</h3>
+              <h3>${data[i].name.first + ' ' + data[i].name.last}</h3>
               <span class="email"> ${data[i].email}</span>
             </div>
             <div class="joined-details">
