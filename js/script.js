@@ -1,9 +1,5 @@
 /*
-Treehouse Techdegree: Data Pagination and Filtering
-*/
-
-/*
-Create the `showPage` function
+The `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
@@ -16,8 +12,8 @@ function showPage (list, page) {
 
   for (let i = 0; i < list.length; i++) {
     if (i >= firstStudent && i < lastStudent) {
-      const studentItem = ` 
-          <li class="student-item cf">
+      const studentItem = 
+          `<li class="student-item cf">
             <div class="student-details">
               <img class="avatar" src="${data[i].picture.large}" alt="Profile Picture">
               <h3>${data[i].name.first + ' ' + data[i].name.last}</h3>
@@ -33,13 +29,44 @@ function showPage (list, page) {
   }; //for Loop
 }; //function showPage
 
-showPage(data, 1);
 
 /*
-Create the `addPagination` function
+The `addPagination` function
 This function will create and insert/append the elements needed for the pagination buttons
 */
 
+function addPagination (list) {
+  const pageCalc = Math.ceil(list.length / 9); //Output is 5 pages unless more data is added.
+  const linkList = document.querySelector('.link-list');
 
+  linkList.innerHTML = '';
 
-// Call functions
+  for (let i = 1; i < list.length; i++) {
+    if (i <= pageCalc) {
+      const pageNumber =
+        `<li>
+          <button type="button">${[i]}</button>
+        </li>
+        `;
+      linkList.insertAdjacentHTML("beforeend", pageNumber);
+    };//if statement
+  };//for Loop
+
+  const pageButton = document.querySelector('button');
+  pageButton.className = 'active';
+
+  linkList.addEventListener('click', (e) => {
+    if (e.tagName = 'button') {
+      const pageButton  = document.querySelector('.active');
+      pageButton.className = '';
+
+      e.target.className = 'active';
+
+      showPage(list, e.target.textContent);
+  
+    }//if statement
+  });//addEventListener
+};//function addPagination
+
+showPage(data, 1);
+addPagination(data);
