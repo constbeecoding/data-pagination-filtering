@@ -70,3 +70,42 @@ function addPagination (list) {
 
 showPage(data, 1);
 addPagination(data);
+
+/* 
+The `search` function
+This function will search for students based on the search input.
+*/
+
+//Dynamically inserts the Heading Elements <h2> and search bar
+
+const pageHeader = document.querySelector('.header');
+
+pageHeader.innerHTML = '';
+
+const studentNav = `
+  <h2>Students</h2>
+  <label for="search" class="student-search">
+  <span>Search by name</span>
+  <input id="search" placeholder="Search by name...">
+  <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
+  </label>
+  `;
+
+pageHeader.insertAdjacentHTML("beforeend", studentNav);
+ 
+
+
+function nameSearch(searchInput, names) {
+  const search = document.querySelector('.student-search');
+  const submit = docuemnt.querySelector('button');
+
+
+}
+  
+nameSearch(search, data);
+
+
+// When search is performed, only studets whose name includes the search input will be displayed.
+//Case insensitive - and work for partial matches.
+// Add keyup event listener to the search input
+//create a new student list based on the search matches use the new list as an argument when calling the already existing func to display 9 students
