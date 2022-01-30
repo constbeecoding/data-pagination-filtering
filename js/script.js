@@ -97,9 +97,30 @@ pageHeader.insertAdjacentHTML("beforeend", studentNav);
 
 function nameSearch(searchInput, names) {
   const search = document.querySelector('.student-search');
-  const submit = docuemnt.querySelector('button');
+  const submit = document.querySelector('button');
 
+  
+  console.log(search);
+  console.log(submit);
 
+  for (let i = 0; i < names.length; i++) {
+
+    if (searchInput.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase())) {
+
+   }
+  }
+
+  submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    nameSearch(search, data);
+    console.log('Submit button is functional!');
+  });
+  
+  // Submit Keyup Event Listener
+  search.addEventListener('keyup', () => {
+    nameSearch(search, data);
+    console.log('Keyup event on the Search input is functional!');
+  });
 }
   
 nameSearch(search, data);
