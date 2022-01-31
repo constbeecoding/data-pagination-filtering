@@ -13,20 +13,27 @@ A simple project demonstrating pagination using a student directory. Limited to 
 <summary> File Structure </summary>
 <br>
   
-```.
-├── css                 css folder
+```
+.
+├── .github                 github config folder
+|   └── ISSUE_TEMPLATE      template for issues/prs
+|       └──issue-template.md
+|   └──workflows            workflows folder
+|       └──codacy.yml
+|       └──greetings.yml
+├── css                     css folder
 |   └── reset.css
 |   └── styles.css
-├── examples            mockups
+├── examples                mockups
 |   └── example-exceeds.png
 |   └── example-meets.png
-├── img                 img folder
+├── img                     img folder
 |   └── icn-search.svg
-├── js                  javascript folder
+├── js                      javascript folder
 |   └── data.js
 |   └── script.js
-├── index.html          base html file
-└── README.md           (You are here) Readme.md file
+├── index.html              base html file
+└── README.md               (You are here) Readme.md file
 ```
   
 </details>
