@@ -195,7 +195,9 @@ header h2 {
 	margin-bottom: 15px;
 }
 
-
+.is-hidden {
+  display: none;
+}
 
 @media screen and (min-width: 700px) {
 

@@ -97,8 +97,10 @@ pageHeader.insertAdjacentHTML("beforeend", studentNav);
 
 function nameSearch(searchInput, names) {
   const search = document.querySelector('.student-search');
-  const input = document.getElementById('search');
+  const input = document.getElementById('search').value;
   const submit = document.querySelector('button');
+
+  const students = document.querySelectorAll('.student-item');
 
   input.innerHTML = '';
 
@@ -106,9 +108,11 @@ function nameSearch(searchInput, names) {
   console.log(input);
   console.log(submit);
 
-  for (let i = 0; i < names.length; i++) {
-    if (names[i].name.first.includes(searchInput) || names[i].name.last.includes(searchInput)) {
-    
+  for (let i = 1; i < students.length; i++) {
+    if (students[i].innerText.toLowerCase().includes(input.toLowerCase())) {
+      students[i].classList.remove("is-hidden");
+    } else {
+      students[i].classList.add("is-hidden");
     }
   }
 
