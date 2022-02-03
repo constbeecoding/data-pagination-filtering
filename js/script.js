@@ -86,7 +86,7 @@ const studentNav = `
   <h2>Students</h2>
   <label for="search" class="student-search">
   <span>Search by name</span>
-  <input id="search" placeholder="Search by name...">
+  <input type="search" oninput="nameSearch()" id="search" placeholder="Search by name...">
   <button type="button"><img src="img/icn-search.svg" alt="Search icon"></button>
   </label>
   `;
@@ -107,15 +107,13 @@ function nameSearch(searchInput, names) {
   console.log(submit);
 
   for (let i = 0; i < names.length; i++) {
-    input.addEventListener('input', (e) => {
-    input = e.target.value.toLowerCase()
-  })
-    if (searchInput.value.length !== 0 && names[i].textContent.toLowerCase().includes(searchInput.value.toLowerCase())) {
-   }
+    if (names[i].name.first.includes(searchInput) || names[i].name.last.includes(searchInput)) {
+    
+    }
   }
 
   submit.addEventListener('click', (event) => {
-    //event.preventDefault();
+    event.preventDefault();
     nameSearch(search, data);
     console.log('Submit button is functional!');
   });
