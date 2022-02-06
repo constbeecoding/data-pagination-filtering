@@ -96,26 +96,31 @@ pageHeader.insertAdjacentHTML("beforeend", studentNav);
 
 
 function nameSearch(searchInput, names) {
-  const search = document.querySelector('.student-search');
-  const input = document.getElementById('search').value;
+  //const search = document.querySelector('.student-search');
+  const input = document.getElementById('search');
   const submit = document.querySelector('button');
 
-  const students = document.querySelectorAll('.student-item');
+  // const students = document.querySelectorAll('.student-item');
 
   input.innerHTML = '';
 
-  console.log(search);
+  //console.log(search);
+  console.log(searchInput);
+  console.log(names);
   console.log(input);
   console.log(submit);
 
-  for (let i = 1; i < students.length; i++) {
-    if (students[i].innerText.toLowerCase().includes(input.toLowerCase())) {
-      students[i].classList.remove("is-hidden");
-    } else {
-      students[i].classList.add("is-hidden");
+  for (let i = 1; i < names.length; i++) {
+    if (names[i].name.first.includes(searchInput) || names[i].name.last.includes(searchInput)) {
+      //create a new student list if the search matches
+     
+      
+
+      console.log(showPage);
     }
   }
 
+  // Submit button click event listener
   submit.addEventListener('click', (event) => {
     event.preventDefault();
     nameSearch(search, data);
@@ -128,11 +133,7 @@ function nameSearch(searchInput, names) {
     console.log('Keyup event on the Search input is functional!');
   });
 }
-  
+
 nameSearch(search, data);
 
-
-// When search is performed, only studets whose name includes the search input will be displayed.
-//Case insensitive - and work for partial matches.
-// Add keyup event listener to the search input
-//create a new student list based on the search matches use the new list as an argument when calling the already existing func to display 9 students
+//create a new student list if the search matches
