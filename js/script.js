@@ -63,7 +63,7 @@ function addPagination (list) {
   pageButton.className = 'active';
 
   linkList.addEventListener('click', (e) => {
-    if (e.target.tagName === 'button') {
+    if (e.target.tagName === 'BUTTON') {
       document.querySelector('.active').className = '';
       e.target.className = 'active';
       e.stopPropagation();
